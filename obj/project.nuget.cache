@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "+yfcDVpfx89+0IhDdt9/R4MfUzLnBQg3XRD/M4OS7WdOgkEfnxpq/u4RXAFy/Ldz9zZvnFU9+Bt17nXPBinDjg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dschenck\\src\\github\\donschenck\\vac-seen-getter\\vac-seen-getter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dschenck\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\dschenck\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\dschenck\\.nuget\\packages\\mysqlconnector\\2.1.10\\mysqlconnector.2.1.10.nupkg.sha512",
+    "C:\\Users\\dschenck\\.nuget\\packages\\swashbuckle.aspnetcore\\6.3.1\\swashbuckle.aspnetcore.6.3.1.nupkg.sha512",
+    "C:\\Users\\dschenck\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
+    "C:\\Users\\dschenck\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.1\\swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",
+    "C:\\Users\\dschenck\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.3.1\\swashbuckle.aspnetcore.swaggerui.6.3.1.nupkg.sha512"
+  ],
+  "logs": []
+}
