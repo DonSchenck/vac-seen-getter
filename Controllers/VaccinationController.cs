@@ -18,6 +18,9 @@ public class VaccinationController : ControllerBase
     public Vaccination Get(string queryDate, string countryCode)
     {
         Vaccination v = new Vaccination();
+        v.Count = 0;
+        v.CountryCode = countryCode;
+        v.Date = queryDate;
 
         // Read from database
         string q = String.Format("SELECT vaccination_count FROM vaccination_summaries WHERE location_code = '{0}' AND reporting_date = '{1}'", countryCode, queryDate);
@@ -29,10 +32,7 @@ public class VaccinationController : ControllerBase
             using MySqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-//                Console.WriteLine($"{rdr.GetInt32(0),-4} {rdr.GetString(1),-10} {rdr.GetInt32(2),10}");
-                v.CountryCode = countryCode;
                 v.Count = rdr.GetInt32(0);
-                v.Date = queryDate;
             }
         }
         return v;
