@@ -25,3 +25,4 @@ C:\Users\dschenck\src\github\donschenck\vac-seen-getter\obj\Debug\net6.0\refint\
 C:\Users\dschenck\src\github\donschenck\vac-seen-getter\obj\Debug\net6.0\vac-seen-getter.pdb
 C:\Users\dschenck\src\github\donschenck\vac-seen-getter\obj\Debug\net6.0\vac-seen-getter.genruntimeconfig.cache
 C:\Users\dschenck\src\github\donschenck\vac-seen-getter\obj\Debug\net6.0\ref\vac-seen-getter.dll
+C:\Users\dschenck\src\github\donschenck\vac-seen-getter\bin\Debug\net6.0\MySqlConnector.dll

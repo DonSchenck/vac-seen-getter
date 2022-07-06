@@ -15,12 +15,12 @@ public class VaccinationController : ControllerBase
     }
 
     [HttpGet(Name = "GetVaccinationSummary")]
-    public Vaccination Get(DateTime queryDate, string countryCode)
+    public Vaccination Get(string queryDate, string countryCode)
     {
         Vaccination v = new Vaccination();
 
         // Read from database
-        string q = String.Format("SELECT vaccination_count FROM vaccination_summaries WHERE location_code = '{0}' AND reporting_date = {1}", countryCode, queryDate);
+        string q = String.Format("SELECT vaccination_count FROM vaccination_summaries WHERE location_code = '{0}' AND reporting_date = '{1}'", countryCode, queryDate);
 
         using (var connection = new MySqlConnection(Environment.GetEnvironmentVariable("MYSQL_CONNECTION_STRING")))
         {
