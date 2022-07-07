@@ -15,7 +15,7 @@ public class VaccinationController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("GetVaccinationSummaries")]
+    [HttpGet("GetVaccinationSummary")]
     public List<Vaccination> Get(string queryDate, string countryCode, int DaysToGoBack)
     {
         List<Vaccination> result = new List<Vaccination>();
