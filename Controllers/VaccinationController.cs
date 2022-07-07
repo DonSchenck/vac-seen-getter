@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
+using System.Globalization;
 
 namespace vac_seen_getter.Controllers;
 
@@ -20,8 +21,8 @@ public class VaccinationController : ControllerBase
         List<Vaccination> result = new List<Vaccination>();
 
         // Calculate end date
-        DateTime startDate = DateTime.Today.AddDays(-30);
-        DateTime endDate = DateTime.Today;
+        DateTime endDate = DateTime.ParseExact(queryDate, "yyyyMMdd", CultureInfo.InvariantCulture);
+        DateTime startDate = DateTime.Today.AddDays(-1 * DaysToGoBack);
 
         DateTime currentDate = startDate;
         while (currentDate <= endDate)
