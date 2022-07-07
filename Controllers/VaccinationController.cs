@@ -53,7 +53,7 @@ public class VaccinationController : ControllerBase
         return result;
     }
 
-    [HttpGet(Name = "GetVaccinationSummary")]
+/*    [HttpGet(Name = "GetVaccinationSummary")]
     public Vaccination Get(string queryDate, string countryCode)
     {
         Vaccination v = new Vaccination();
@@ -76,4 +76,5 @@ public class VaccinationController : ControllerBase
         }
         return v;
     }
+*/
 }
