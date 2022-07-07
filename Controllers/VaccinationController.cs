@@ -14,6 +14,44 @@ public class VaccinationController : ControllerBase
         _logger = logger;
     }
 
+    [HttpGet("GetVaccinationSummaries")]
+    public List<Vaccination> Get(string queryDate, string countryCode, int DaysToGoBack)
+    {
+        List<Vaccination> result = new List<Vaccination>();
+
+        // Calculate end date
+        DateTime startDate = DateTime.Today.AddDays(-30);
+        DateTime endDate = DateTime.Today;
+
+        DateTime currentDate = startDate;
+        while (currentDate <= endDate)
+        {
+            string selectDate = currentDate.ToString("yyyyMMdd");
+            Vaccination v = new Vaccination();
+            v.Count = 0;
+            v.CountryCode = countryCode;
+            v.Date = selectDate;
+
+            // Read from database
+            string q = String.Format("SELECT vaccination_count FROM vaccination_summaries WHERE location_code = '{0}' AND reporting_date = '{1}'", countryCode, selectDate);
+
+            using (var connection = new MySqlConnection(Environment.GetEnvironmentVariable("MYSQL_CONNECTION_STRING")))
+            {
+                connection.Open();
+                using var cmd = new MySqlCommand(q, connection);
+                using MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    v.Count = rdr.GetInt32(0);
+                }
+            }
+            result.Add(v);
+            currentDate = currentDate.AddDays(1);
+        }
+
+        return result;
+    }
+
     [HttpGet(Name = "GetVaccinationSummary")]
     public Vaccination Get(string queryDate, string countryCode)
     {
