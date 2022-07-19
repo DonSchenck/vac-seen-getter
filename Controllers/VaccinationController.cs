@@ -22,7 +22,7 @@ public class VaccinationController : ControllerBase
 
         // Calculate end date
         DateTime endDate = DateTime.ParseExact(queryDate, "yyyyMMdd", CultureInfo.InvariantCulture);
-        DateTime startDate = DateTime.Today.AddDays(-1 * DaysToGoBack);
+        DateTime startDate = DateTime.Today.AddDays(-1 * (DaysToGoBack - 1));
 
         DateTime currentDate = startDate;
         while (currentDate <= endDate)
