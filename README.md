@@ -3,11 +3,11 @@ Retrieves vaccination summary. Starts at the date supplied and goes back in time
 
 For example: 20220901, 30 will begin at 9/1/2022 and summarize each day up to 30 days prior to that date.
 
-Here's an example of calling this API (from a Blazor server-side app):
+Here's an example of calling this API (from a Blazor server-side app):  
 
-string queryDate = DateTime.Now.ToString("yyyyMMdd");
-string country = "US";
-string URI = $"http://vac-seen-getter:8080/vaccination/GetVaccinationSummary/?queryDate={queryDate}&countryCode={country}&DaysToGoBack=30";
+string queryDate = DateTime.Now.ToString("yyyyMMdd");  
+string country = "US";  
+string URI = $"http://vac-seen-getter:8080/vaccination/GetVaccinationSummary/?queryDate={queryDate}&countryCode={country}&DaysToGoBack=30";  
 
 ## Creating this app in OpenShift
 Run the following command:
